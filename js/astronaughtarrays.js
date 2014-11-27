@@ -24,7 +24,7 @@ function alphabetizer(names) {
     for (name in names){
       formattedMoonWalkers.push(nameFormatter(names[name]));
     }
-    return formattedMoonWalkers;
+    return formattedMoonWalkers.sort();
 }
 
 // Try logging your results to test your code!
