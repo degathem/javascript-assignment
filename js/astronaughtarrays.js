@@ -12,6 +12,9 @@ var moonWalkers = [
   "Eugene Cernan",
   "Harrison Schmitt"
 ];
+
+// nameFormatter function takes a name in 'First Last' format and switches it to 
+// 'Last, First' format.
 function nameFormatter(name){
   var fullNameArray = [];
   fullNameArray = name.split(' ');
