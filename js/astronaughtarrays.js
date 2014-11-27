@@ -1,4 +1,4 @@
-﻿var moonWalkers = [
+var moonWalkers = [
   "Neil Armstrong",
   "Buzz Aldrin",
   "Pete Conrad",
@@ -14,7 +14,6 @@
 ];
 function nameFormatter(names){
   
-
 }
 
 function alphabetizer(names) {

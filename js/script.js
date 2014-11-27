@@ -8,20 +8,20 @@ function getRelationship(x, y) {
         //var isOrAre;
         relationshipMessage = "Can't compare relationships because ";
         if (typeX != "number" && typeY != "number"){
-        	relationshipMessage = relationshipMessage + x + " and " + y + " are not numbers";
+            relationshipMessage = relationshipMessage + x + " and " + y + " are not numbers";
         } else if (typeX === "number" && typeY != "number"){
-        	relationshipMessage = relationshipMessage + y + " is not a number";
+            relationshipMessage = relationshipMessage + y + " is not a number";
         } else if (typeX != "number" && typeY === "number"){
-        	relationshipMessage = relationshipMessage + x + " is not a number";
+            relationshipMessage = relationshipMessage + x + " is not a number";
         };
     } else {
-    	if (x > y) {
-    		relationshipMessage = ">";
-    	} else if (x < y){
-    		relationshipMessage = "<";
-    	} else {
-    		relationshipMessage = "=";
-    	};
+        if (x > y) {
+            relationshipMessage = ">";
+        } else if (x < y){
+            relationshipMessage = "<";
+        } else {
+            relationshipMessage = "=";
+        };
     };
     return relationshipMessage;
 };

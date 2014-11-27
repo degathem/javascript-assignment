@@ -27,7 +27,6 @@ function getRelationship(x, y) {
 };
 
 // Try logging these functions to test your code!
-console.log("hello");
 console.log(getRelationship(1,4));
 console.log(getRelationship(1,1));
 console.log(getRelationship("that",2));
