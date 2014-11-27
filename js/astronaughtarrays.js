@@ -12,13 +12,19 @@ var moonWalkers = [
   "Eugene Cernan",
   "Harrison Schmitt"
 ];
-function nameFormatter(names){
-  
-}
+function nameFormatter(name){
+  var fullNameArray = [];
+  fullNameArray = name.split(' ');
+  return fullNameArray[1] + ', ' + fullNameArray[0]; 
+};
 
 function alphabetizer(names) {
     // Your code goes here!
-    
+    var formattedMoonWalkers = []
+    for (name in names){
+      formattedMoonWalkers.push(nameFormatter(names[name]));
+    }
+    return formattedMoonWalkers;
 }
 
 // Try logging your results to test your code!
