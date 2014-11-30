@@ -11,7 +11,6 @@ function isNumber(num){
 function getRelationship(x, y) {
     var isNumberX = isNumber(x);
     var isNumberY = isNumber(y);
-    console.log(isNumberX + ' ' + isNumberY)
     var relationshipMessage;
     // Condition to test if either value is not a number.
     if (!isNumberX || !isNumberY){
@@ -19,9 +18,9 @@ function getRelationship(x, y) {
         relationshipMessage = 'Can\'t compare relationships because ';
         if (!isNumberX && !isNumberY){
             relationshipMessage = relationshipMessage + x + ' and ' + y + ' are not numbers';
-        } else if (!isNumberX && isNumberY){
-            relationshipMessage = relationshipMessage + y + ' is not a number';
         } else if (isNumberX && !isNumberY){
+            relationshipMessage = relationshipMessage + y + ' is not a number';
+        } else if (!isNumberX && isNumberY){
             relationshipMessage = relationshipMessage + x + ' is not a number';
         };
     // When both values passed to the function are numbers.
