@@ -1,13 +1,31 @@
 // Iterate through the localizedRuleNames in ruleResults and 
 // return an array of their strings.
+
 function ruleList(results) {
     // Your code goes here!
-}
+    var rules = results.formattedResults.ruleResults;
+    var ruleArray = [];
+    for (rule in rules){
+        ruleArray.push(rules[rule].localizedRuleName);
+    }
+    return ruleArray;//results.formattedResults.ruleResults.AvoidBadRequests.localizedRuleName
+  }
 
 // Iterate through pageStats in the psiResults object and 
 // return the total number of bytes to load the website.
 function totalBytes(results) {
     // Your code goes here!
+    var pageStats = psinsights.pageStats;
+    var pageStatsKeyArray = Object.keys(pageStats)
+    var totalBytes = 0;
+    for (statKey in pageStatsKeyArray){
+        console.log();
+        var byteSearch = pageStatsKeyArray[statKey].search(/Bytes/);
+        if (byteSearch != -1){
+            totalBytes = totalBytes + Number(pageStats[pageStatsKeyArray[statKey]]);
+        };
+    }
+    return totalBytes;
 }
 
 // Below, you'll find a sample PS Insights JSON
