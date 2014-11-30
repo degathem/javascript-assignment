@@ -2,24 +2,26 @@
 // return an array of their strings.
 
 function ruleList(results) {
-    // Your code goes here!
+    // We only need the objects within the ruleResults subObject
     var rules = results.formattedResults.ruleResults;
     var ruleArray = [];
     for (rule in rules){
         ruleArray.push(rules[rule].localizedRuleName);
     }
-    return ruleArray;//results.formattedResults.ruleResults.AvoidBadRequests.localizedRuleName
+    return ruleArray;
 }
 
 // Iterate through pageStats in the psiResults object and 
 // return the total number of bytes to load the website.
 function totalBytes(results) {
-    // Your code goes here!
     var pageStats = psinsights.pageStats;
+    //Object keys array is required to find keys with the word 'Bytes'
     var pageStatsKeyArray = Object.keys(pageStats);
     var totalBytes = 0;
     for (statKey in pageStatsKeyArray){
+        // Search for the word 'Bytes' within the key name
         var byteSearch = pageStatsKeyArray[statKey].search(/Bytes/);
+        // Only add the number of bytes if the key name has the word 'Bytes' within
         if (byteSearch != -1){
             totalBytes = totalBytes + Number(pageStats[pageStatsKeyArray[statKey]]);
         };

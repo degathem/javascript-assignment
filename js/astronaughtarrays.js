@@ -22,7 +22,6 @@ function nameFormatter(name){
 };
 
 function alphabetizer(names) {
-    // Your code goes here!
     var formattedMoonWalkers = []
     for (name in names){
       formattedMoonWalkers.push(nameFormatter(names[name]));
