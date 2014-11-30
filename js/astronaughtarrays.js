@@ -13,8 +13,11 @@ var moonWalkers = [
   "Harrison Schmitt"
 ];
 
-// nameFormatter function takes a name in 'First Last' format and switches it to 
-// 'Last, First' format.
+/**
+ * nameFormatter function takes a name in 'First Last' format and switches it to 
+ * 'Last, First' format.
+ */
+
 function nameFormatter(name){
   var fullNameArray = [];
   fullNameArray = name.split(' ');
@@ -22,8 +25,8 @@ function nameFormatter(name){
 };
 
 function alphabetizer(names) {
-    var formattedMoonWalkers = []
-    for (name in names){
+    var formattedMoonWalkers = [];
+    for (var name in names){
       formattedMoonWalkers.push(nameFormatter(names[name]));
     }
     return formattedMoonWalkers.sort();

@@ -1,5 +1,6 @@
-// isNumber function returns true only if the data type is a number and not NaN;
-// this function is required because NaN is considered as 'number' data type.
+/** isNumber function returns true only if the data type is a number and not NaN;
+ *this function is required because NaN is considered as 'number' data type.
+ */
 function isNumber(num){
     if (typeof num === 'number' && !isNaN(num)){
         return true;
@@ -12,9 +13,13 @@ function getRelationship(x, y) {
     var isNumberX = isNumber(x);
     var isNumberY = isNumber(y);
     var relationshipMessage;
+    
     // Condition to test if either value is not a number.
     if (!isNumberX || !isNumberY){
-        // When either value is not a number, the first part of the phrase will be the same.
+        /**
+         * When either value is not a number, the first part of the phrase 
+         * will be the same.
+        */
         relationshipMessage = 'Can\'t compare relationships because ';
         if (!isNumberX && !isNumberY){
             relationshipMessage = relationshipMessage + x + ' and ' + y + ' are not numbers';
@@ -22,7 +27,7 @@ function getRelationship(x, y) {
             relationshipMessage = relationshipMessage + y + ' is not a number';
         } else if (!isNumberX && isNumberY){
             relationshipMessage = relationshipMessage + x + ' is not a number';
-        };
+    };
     // When both values passed to the function are numbers.
     } else {
         if (x > y) {
@@ -31,8 +36,8 @@ function getRelationship(x, y) {
             relationshipMessage = '<';
         } else {
             relationshipMessage = '=';
-        };
-    };
+        }
+    }
     return relationshipMessage;
 };
 

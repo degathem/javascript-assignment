@@ -5,28 +5,29 @@ function ruleList(results) {
     // We only need the objects within the ruleResults subObject
     var rules = results.formattedResults.ruleResults;
     var ruleArray = [];
-    for (rule in rules){
+    for (var rule in rules){
         ruleArray.push(rules[rule].localizedRuleName);
     }
     return ruleArray;
 }
 
-// Iterate through pageStats in the psiResults object and 
-// return the total number of bytes to load the website.
+/** totalBytes iterates through pageStats in the PSI JSON and return the total 
+ * number of bytes to load the website.
+ */
 function totalBytes(results) {
-    var pageStats = psinsights.pageStats;
+    var pageStats = results.pageStats;
     //Object keys array is required to find keys with the word 'Bytes'
     var pageStatsKeyArray = Object.keys(pageStats);
-    var totalBytes = 0;
-    for (statKey in pageStatsKeyArray){
+    var byteTotal = 0;
+    for (var statKey in pageStatsKeyArray){
         // Search for the word 'Bytes' within the key name
         var byteSearch = pageStatsKeyArray[statKey].search(/Bytes/);
         // Only add the number of bytes if the key name has the word 'Bytes' within
         if (byteSearch != -1){
-            totalBytes = totalBytes + Number(pageStats[pageStatsKeyArray[statKey]]);
-        };
+            byteTotal = byteTotal + Number(pageStats[pageStatsKeyArray[statKey]]);
+        }
     }
-    return totalBytes;
+    return byteTotal;
 }
 
 // Below, you'll find a sample PS Insights JSON
